@@ -1880,3 +1880,29 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+.media-posts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.media-post-item {
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+}
+
+.media-content {
+  position: relative;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .media-posts-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
