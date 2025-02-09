@@ -1884,25 +1884,51 @@ textarea.form-input::-webkit-resizer { display: none; }
 .media-posts-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 20px;
   margin-bottom: 30px;
 }
 
 .media-post-item {
+  width: 100%;
   background: var(--border-gradient-onyx);
-  padding: 20px;
+  padding: 15px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
 }
 
 .media-content {
   position: relative;
-  padding-bottom: 20px;
+  width: 100%;
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
+/* Responsive grid adjustments */
+@media (min-width: 580px) {
   .media-posts-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
+}
+
+@media (min-width: 1024px) {
+  .media-posts-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .media-post-item {
+    padding: 20px;
+  }
+}
+
+/* Twitter embed specific styles */
+.twitter-tweet {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.media-content iframe {
+  width: 100% !important;
+  margin: 0 auto !important;
+  border-radius: 8px;
 }
