@@ -488,6 +488,57 @@ main {
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
 
+/*-----------------------------------*\
+  #RESUME NAVIGATION
+\*-----------------------------------*/
+
+.resume-nav {
+  margin-bottom: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--jet);
+}
+
+.resume-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-nav-link {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  padding: 12px 20px;
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  transition: all var(--transition-1);
+  cursor: pointer;
+}
+
+.resume-nav-link:hover,
+.resume-nav-link:focus { 
+  color: var(--light-gray-70);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.resume-nav-link.active { 
+  color: var(--orange-yellow-crayola);
+  background: var(--bg-gradient-yellow-1);
+  border-color: var(--orange-yellow-crayola);
+}
+
+/* Hide resume sections by default */
+.timeline[data-resume-section] {
+  display: none;
+}
+
+.timeline[data-resume-section].active {
+  display: block;
+}
+
 
 
 

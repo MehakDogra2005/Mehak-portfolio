@@ -157,3 +157,38 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// resume navigation variables
+const resumeNavLinks = document.querySelectorAll("[data-resume-nav]");
+const resumeSections = document.querySelectorAll("[data-resume-section]");
+
+// add event to all resume nav links
+for (let i = 0; i < resumeNavLinks.length; i++) {
+  resumeNavLinks[i].addEventListener("click", function () {
+    
+    const selectedSection = this.dataset.resumeNav;
+    
+    // Remove active class from all nav links and sections
+    for (let j = 0; j < resumeNavLinks.length; j++) {
+      resumeNavLinks[j].classList.remove("active");
+    }
+    for (let k = 0; k < resumeSections.length; k++) {
+      resumeSections[k].classList.remove("active");
+    }
+    
+    // Add active class to clicked nav link and corresponding section
+    this.classList.add("active");
+    const targetSection = document.querySelector(`[data-resume-section="${selectedSection}"]`);
+    if (targetSection) {
+      targetSection.classList.add("active");
+    }
+  });
+}
+
+// Initialize: Show experience section by default
+document.addEventListener("DOMContentLoaded", function() {
+  const experienceSection = document.querySelector('[data-resume-section="experience"]');
+  if (experienceSection) {
+    experienceSection.classList.add("active");
+  }
+});
